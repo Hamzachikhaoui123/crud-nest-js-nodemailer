@@ -45,7 +45,7 @@ async findByEmail(email: any): Promise<User | undefined> {
     
     return user; 
 }
-public example(): void {
+public sendEmail(): void {
     this
       .mailerService
       .sendMail({

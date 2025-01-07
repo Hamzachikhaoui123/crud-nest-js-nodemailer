@@ -8,25 +8,18 @@ import { Produit } from 'src/typeorm/entities/produit';
 
 @Controller('produit')
 export class ProduitController {
-    constructor(private produitService:ProduitService,private categoryService:CategoryService){
+  constructor(private produitService: ProduitService, private categoryService: CategoryService) {
 
-    }
-    @Post('add')
-   async addProduit(@Body() createProduit:CreateProduitDto){
-   
-  
-    
-    
-      
-        
-         
-   return  await this.produitService.addProduit({...createProduit,createAt:new Date()})
-   }
+  }
+  @Post('add')
+  async addProduit(@Body() createProduit: CreateProduitDto) {
+    return await this.produitService.addProduit({ ...createProduit, createAt: new Date() })
+  }
 
-   @Get('all')
-   async getProduit(){
-  
-     return this.produitService.getProduit()
-         
- }
+  @Get('all')
+  async getProduit() {
+
+    return this.produitService.getProduit()
+
+  }
 }
